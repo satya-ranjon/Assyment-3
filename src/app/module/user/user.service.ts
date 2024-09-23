@@ -31,6 +31,7 @@ const loginUser = async (data: Pick<TUser, "email" | "password">) => {
   const jwtPayload = {
     userId: existingUser.id,
     email: existingUser.email,
+    role: existingUser.role,
   };
 
   const token = createToken(

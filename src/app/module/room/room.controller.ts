@@ -14,8 +14,18 @@ const createRoom = catchAsync(async (req, res) => {
   });
 });
 
-const getAllRooms = catchAsync(async (req, res) => {
+const getAllRooms = catchAsync(async (_req, res) => {
   const response = await roomService.getAllRooms();
+
+  if (!response.length) {
+    sendResponse(res, {
+      success: false,
+      statusCode: httpStatus.NOT_FOUND,
+      message: "No rooms found",
+      data: response,
+    });
+  }
+
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,

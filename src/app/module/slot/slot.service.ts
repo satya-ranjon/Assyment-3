@@ -1,4 +1,4 @@
-import { ISlot, ISlotDocument } from "./slot.interface";
+import { ISlot } from "./slot.interface";
 import { Slot } from "./slot.model";
 import generateSlots from "./slot.utils";
 

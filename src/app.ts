@@ -4,13 +4,12 @@ import cookieParser from "cookie-parser";
 import router from "./app/routes";
 import notFound from "./app/middlewares/notFound";
 import globalErrorHandler from "./app/middlewares/globalErrorhandler";
-import { ZodError } from "zod";
 
 const app: Application = express();
 
 // parser
 app.use(express.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(cors());
 
 // application router

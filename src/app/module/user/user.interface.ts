@@ -1,4 +1,5 @@
 import { Document, Model } from "mongoose";
+import { USER_ROLE } from "./user.constant";
 
 // User interface
 export interface TUser {
@@ -19,3 +20,5 @@ export interface UserModel extends Model<IUserDocument> {
 export interface IUserDocument extends TUser, Document {
   comparePassword(candidatePassword: string): Promise<boolean>;
 }
+
+export type TUserRole = keyof typeof USER_ROLE;
