@@ -1,5 +1,3 @@
-import { NextFunction, Request, Response } from "express";
-import AppError from "../../error/AppError";
 import sendResponse from "../../utils/sendResponse";
 import httpStatus from "http-status";
 import userService from "./user.service";
